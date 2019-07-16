@@ -1,0 +1,1525 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20191.19.0321.1733                               -->
+<workbook original-version='18.1' source-build='2019.1.2 (20191.19.0321.1733)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+    <ZoneBackgroundTransparency />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='ListOfOrders+ OrderBreakdown' inline='true' name='federated.0hr04oj1851aqo10jcrvy18y7udw' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='P1-AmazingMartEU2' name='excel-direct.0jrx8ry0jhww4x101p4630i3ftgh'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='E:/Study/Tableau/P1-AmazingMartEU2.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <relation join='inner' type='join'>
+          <clause type='join'>
+            <expression op='='>
+              <expression op='[ListOfOrders].[Order ID]' />
+              <expression op='[OrderBreakdown].[Order ID]' />
+            </expression>
+          </clause>
+          <relation connection='excel-direct.0jrx8ry0jhww4x101p4630i3ftgh' name='ListOfOrders' table='[ListOfOrders$]' type='table'>
+            <columns gridOrigin='A1:J4118:no:A1:J4118:0' header='yes' outcome='6'>
+              <column datatype='string' name='Order ID' ordinal='0' />
+              <column datatype='date' name='Order Date' ordinal='1' />
+              <column datatype='string' name='Customer Name' ordinal='2' />
+              <column datatype='string' name='City' ordinal='3' />
+              <column datatype='string' name='Country' ordinal='4' />
+              <column datatype='string' name='Region' ordinal='5' />
+              <column datatype='string' name='Segment' ordinal='6' />
+              <column datatype='date' name='Ship Date' ordinal='7' />
+              <column datatype='string' name='Ship Mode' ordinal='8' />
+              <column datatype='string' name='State' ordinal='9' />
+            </columns>
+          </relation>
+          <relation connection='excel-direct.0jrx8ry0jhww4x101p4630i3ftgh' name='OrderBreakdown' table='[OrderBreakdown$]' type='table'>
+            <columns gridOrigin='A1:H8048:no:A1:H8048:0' header='yes' outcome='6'>
+              <column datatype='string' name='Order ID' ordinal='0' />
+              <column datatype='string' name='Product Name' ordinal='1' />
+              <column datatype='real' name='Discount' ordinal='2' />
+              <column datatype='integer' name='Sales' ordinal='3' />
+              <column datatype='integer' name='Profit' ordinal='4' />
+              <column datatype='integer' name='Quantity' ordinal='5' />
+              <column datatype='string' name='Category' ordinal='6' />
+              <column datatype='string' name='Sub-Category' ordinal='7' />
+            </columns>
+          </relation>
+        </relation>
+        <cols>
+          <map key='[Category]' value='[OrderBreakdown].[Category]' />
+          <map key='[City]' value='[ListOfOrders].[City]' />
+          <map key='[Country]' value='[ListOfOrders].[Country]' />
+          <map key='[Customer Name]' value='[ListOfOrders].[Customer Name]' />
+          <map key='[Discount]' value='[OrderBreakdown].[Discount]' />
+          <map key='[Order Date]' value='[ListOfOrders].[Order Date]' />
+          <map key='[Order ID (OrderBreakdown)]' value='[OrderBreakdown].[Order ID]' />
+          <map key='[Order ID]' value='[ListOfOrders].[Order ID]' />
+          <map key='[Product Name]' value='[OrderBreakdown].[Product Name]' />
+          <map key='[Profit]' value='[OrderBreakdown].[Profit]' />
+          <map key='[Quantity]' value='[OrderBreakdown].[Quantity]' />
+          <map key='[Region]' value='[ListOfOrders].[Region]' />
+          <map key='[Sales]' value='[OrderBreakdown].[Sales]' />
+          <map key='[Segment]' value='[ListOfOrders].[Segment]' />
+          <map key='[Ship Date]' value='[ListOfOrders].[Ship Date]' />
+          <map key='[Ship Mode]' value='[ListOfOrders].[Ship Mode]' />
+          <map key='[State]' value='[ListOfOrders].[State]' />
+          <map key='[Sub-Category]' value='[OrderBreakdown].[Sub-Category]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>Order ID</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Order ID]</local-name>
+            <parent-name>[ListOfOrders]</parent-name>
+            <remote-alias>Order ID</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Order Date</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[Order Date]</local-name>
+            <parent-name>[ListOfOrders]</parent-name>
+            <remote-alias>Order Date</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;DATE&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Customer Name</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Customer Name]</local-name>
+            <parent-name>[ListOfOrders]</parent-name>
+            <remote-alias>Customer Name</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>City</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[City]</local-name>
+            <parent-name>[ListOfOrders]</parent-name>
+            <remote-alias>City</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Country</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Country]</local-name>
+            <parent-name>[ListOfOrders]</parent-name>
+            <remote-alias>Country</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Region</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Region]</local-name>
+            <parent-name>[ListOfOrders]</parent-name>
+            <remote-alias>Region</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Segment</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Segment]</local-name>
+            <parent-name>[ListOfOrders]</parent-name>
+            <remote-alias>Segment</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Ship Date</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[Ship Date]</local-name>
+            <parent-name>[ListOfOrders]</parent-name>
+            <remote-alias>Ship Date</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;DATE&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Ship Mode</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Ship Mode]</local-name>
+            <parent-name>[ListOfOrders]</parent-name>
+            <remote-alias>Ship Mode</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>State</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[State]</local-name>
+            <parent-name>[ListOfOrders]</parent-name>
+            <remote-alias>State</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[ListOfOrders]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:J4118:no:A1:J4118:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Order ID</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Order ID (OrderBreakdown)]</local-name>
+            <parent-name>[OrderBreakdown]</parent-name>
+            <remote-alias>Order ID</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Product Name</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Product Name]</local-name>
+            <parent-name>[OrderBreakdown]</parent-name>
+            <remote-alias>Product Name</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Discount</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Discount]</local-name>
+            <parent-name>[OrderBreakdown]</parent-name>
+            <remote-alias>Discount</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Sales</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Sales]</local-name>
+            <parent-name>[OrderBreakdown]</parent-name>
+            <remote-alias>Sales</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Profit</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Profit]</local-name>
+            <parent-name>[OrderBreakdown]</parent-name>
+            <remote-alias>Profit</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Quantity</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Quantity]</local-name>
+            <parent-name>[OrderBreakdown]</parent-name>
+            <remote-alias>Quantity</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Category</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Category]</local-name>
+            <parent-name>[OrderBreakdown]</parent-name>
+            <remote-alias>Category</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Sub-Category</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Sub-Category]</local-name>
+            <parent-name>[OrderBreakdown]</parent-name>
+            <remote-alias>Sub-Category</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[OrderBreakdown]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:H8048:no:A1:H8048:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Profit Margin' datatype='real' name='[Calculation_180988453195726848]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM(Profit)/ SUM([Sales])' />
+      </column>
+      <column datatype='string' name='[City]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+      <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
+      <column-instance column='[State]' derivation='None' name='[none:State:nk]' pivot='key' type='nominal' />
+      <group caption='Action (Country,State)' hidden='true' name='[Action (Country,State)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Country]' />
+          <groupfilter function='level-members' level='[State]' />
+        </groupfilter>
+      </group>
+      <group hidden='true' name='[Inclusions (Country,State)]' name-style='unqualified' user:auto-column='include'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[none:Country:nk]' />
+          <groupfilter function='level-members' level='[none:State:nk]' />
+        </groupfilter>
+      </group>
+      <drill-paths>
+        <drill-path name='Geography'>
+          <field>[Country]</field>
+          <field>[State]</field>
+          <field>[City]</field>
+        </drill-path>
+      </drill-paths>
+      <layout dim-ordering='alphabetic' dim-percentage='0.603734' measure-ordering='alphabetic' measure-percentage='0.396266' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <shared-views>
+    <shared-view name='federated.0hr04oj1851aqo10jcrvy18y7udw'>
+      <datasources>
+        <datasource caption='ListOfOrders+ OrderBreakdown' name='federated.0hr04oj1851aqo10jcrvy18y7udw' />
+      </datasources>
+      <datasource-dependencies datasource='federated.0hr04oj1851aqo10jcrvy18y7udw'>
+        <column datatype='date' name='[Order Date]' role='dimension' type='ordinal' />
+        <column-instance column='[Order Date]' derivation='Year' name='[yr:Order Date:ok]' pivot='key' type='ordinal' />
+      </datasource-dependencies>
+      <filter class='categorical' column='[federated.0hr04oj1851aqo10jcrvy18y7udw].[yr:Order Date:ok]'>
+        <groupfilter function='level-members' level='[yr:Order Date:ok]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+      </filter>
+    </shared-view>
+  </shared-views>
+  <actions>
+    <action caption='Highlight1' name='[Action1]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Dashboard 2' type='sheet' worksheet='MapOfEurope' />
+      <command command='tsc:brush'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Dashboard 2' />
+      </command>
+    </action>
+  </actions>
+  <worksheets>
+    <worksheet name='Customer ScatterPlot'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='ListOfOrders+ OrderBreakdown' name='federated.0hr04oj1851aqo10jcrvy18y7udw' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0hr04oj1851aqo10jcrvy18y7udw'>
+            <column caption='Profit Margin' datatype='real' name='[Calculation_180988453195726848]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM(Profit)/ SUM([Sales])' />
+            </column>
+            <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column datatype='string' name='[Customer Name]' role='dimension' type='nominal' />
+            <column datatype='date' name='[Order Date]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Profit]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Sales]' role='measure' type='quantitative' />
+            <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Customer Name]' derivation='None' name='[none:Customer Name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[State]' derivation='None' name='[none:State:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Profit]' derivation='Sum' name='[sum:Profit:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Sales]' derivation='Sum' name='[sum:Sales:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_180988453195726848]' derivation='User' name='[usr:Calculation_180988453195726848:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Order Date]' derivation='Year' name='[yr:Order Date:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <slices>
+            <column>[federated.0hr04oj1851aqo10jcrvy18y7udw].[yr:Order Date:ok]</column>
+          </slices>
+          <aggregation value='false' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='height' field='[federated.0hr04oj1851aqo10jcrvy18y7udw].[sum:Sales:qk]' value='234' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0hr04oj1851aqo10jcrvy18y7udw].[usr:Calculation_180988453195726848:qk]' max='0.5' min='-0.5' palette='red_blue_diverging_10_0' type='interpolated' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <lod column='[federated.0hr04oj1851aqo10jcrvy18y7udw].[none:Customer Name:nk]' />
+              <lod column='[federated.0hr04oj1851aqo10jcrvy18y7udw].[none:Country:nk]' />
+              <lod column='[federated.0hr04oj1851aqo10jcrvy18y7udw].[none:State:nk]' />
+              <color column='[federated.0hr04oj1851aqo10jcrvy18y7udw].[usr:Calculation_180988453195726848:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='shape' value=':filled/circle' />
+                <format attr='size' value='0.71364641189575195' />
+                <format attr='mark-transparency' value='196' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0hr04oj1851aqo10jcrvy18y7udw].[sum:Profit:qk]</rows>
+        <cols>[federated.0hr04oj1851aqo10jcrvy18y7udw].[sum:Sales:qk]</cols>
+      </table>
+      <simple-id uuid='{BB273EE4-36E3-4E5B-8726-1FD1C86B2497}' />
+    </worksheet>
+    <worksheet name='MapOfEurope'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='ListOfOrders+ OrderBreakdown' name='federated.0hr04oj1851aqo10jcrvy18y7udw' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.0hr04oj1851aqo10jcrvy18y7udw'>
+            <column caption='Profit Margin' datatype='real' name='[Calculation_180988453195726848]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM(Profit)/ SUM([Sales])' />
+            </column>
+            <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column datatype='date' name='[Order Date]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Profit]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Sales]' role='measure' type='quantitative' />
+            <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
+            <column-instance column='[State]' derivation='None' name='[none:State:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Sales]' derivation='Sum' name='[sum:Sales:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_180988453195726848]' derivation='User' name='[usr:Calculation_180988453195726848:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Order Date]' derivation='Year' name='[yr:Order Date:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0hr04oj1851aqo10jcrvy18y7udw].[Inclusions (Country,State)]'>
+            <groupfilter function='crossjoin' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:Country:nk]' />
+              <groupfilter function='level-members' level='[none:State:nk]' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0hr04oj1851aqo10jcrvy18y7udw].[yr:Order Date:ok]</column>
+            <column>[federated.0hr04oj1851aqo10jcrvy18y7udw].[Inclusions (Country,State)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0hr04oj1851aqo10jcrvy18y7udw].[Longitude (generated)]' field-type='quantitative' max='3748328.7725975309' min='-7489263.1895921081' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.0hr04oj1851aqo10jcrvy18y7udw].[Latitude (generated)]' field-type='quantitative' max='8202065.5388254188' min='3837279.51158778' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0hr04oj1851aqo10jcrvy18y7udw].[usr:Calculation_180988453195726848:qk]' max='0.5' min='-0.5' palette='red_blue_diverging_10_0' type='interpolated' />
+          </style-rule>
+          <style-rule element='map-layer'>
+            <format attr='enabled' id='tab_base' value='true' />
+            <format attr='enabled' id='um_lcover' value='true' />
+            <format attr='enabled' id='tab_coastline' value='false' />
+            <format attr='enabled' id='pp2_line' value='false' />
+            <format attr='enabled' id='light_adm0_bnd' value='false' />
+            <format attr='enabled' id='light_adm0_lbl' value='false' />
+            <format attr='enabled' id='um_adm0_bnd' value='true' />
+            <format attr='enabled' id='um_adm0_lbl' value='true' />
+            <format attr='enabled' id='light_pp2_statebounds' value='false' />
+            <format attr='enabled' id='light_pp2_statelabels' value='false' />
+            <format attr='enabled' id='pp2_adminlabels' value='false' />
+            <format attr='enabled' id='pp2_statebounds' value='true' />
+            <format attr='enabled' id='pp2_statelabels' value='true' />
+            <format attr='enabled' id='countybounds' value='false' />
+            <format attr='enabled' id='countylabels' value='false' />
+            <format attr='enabled' id='zipbounds' value='false' />
+            <format attr='enabled' id='ziplabels' value='false' />
+            <format attr='enabled' id='tab_areabounds' value='false' />
+            <format attr='enabled' id='tab_arealabels' value='false' />
+            <format attr='enabled' id='tab_msabounds' value='false' />
+            <format attr='enabled' id='tab_msalabels' value='false' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.0hr04oj1851aqo10jcrvy18y7udw].[usr:Calculation_180988453195726848:qk]' />
+              <size column='[federated.0hr04oj1851aqo10jcrvy18y7udw].[sum:Sales:qk]' />
+              <lod column='[federated.0hr04oj1851aqo10jcrvy18y7udw].[none:Country:nk]' />
+              <lod column='[federated.0hr04oj1851aqo10jcrvy18y7udw].[none:State:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='1.3953038454055786' />
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#000000' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minheight' value='315' />
+                <format attr='maxheight' value='315' />
+                <format attr='minwidth' value='811' />
+                <format attr='maxwidth' value='811' />
+                <format attr='aspect' value='0' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0hr04oj1851aqo10jcrvy18y7udw].[Latitude (generated)]</rows>
+        <cols>[federated.0hr04oj1851aqo10jcrvy18y7udw].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{D72E84A2-0D4E-4962-99B6-40BDE41F60CF}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name='Dashboard 2'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <datasources>
+        <datasource caption='ListOfOrders+ OrderBreakdown' name='federated.0hr04oj1851aqo10jcrvy18y7udw' />
+      </datasources>
+      <datasource-dependencies datasource='federated.0hr04oj1851aqo10jcrvy18y7udw'>
+        <column datatype='date' name='[Order Date]' role='dimension' type='ordinal' />
+        <column-instance column='[Order Date]' derivation='Year' name='[yr:Order Date:ok]' pivot='key' type='ordinal' />
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='4' type='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98000' id='7' param='horz' type='layout-flow' w='98400' x='800' y='1000'>
+            <zone h='98000' id='5' type='layout-basic' w='82400' x='800' y='1000'>
+              <zone h='49000' id='3' name='MapOfEurope' w='82400' x='800' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='49000' id='11' name='Customer ScatterPlot' w='82400' x='800' y='50000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+            <zone fixed-size='160' h='98000' id='6' is-fixed='true' param='vert' type='layout-flow' w='16000' x='83200' y='1000'>
+              <zone h='9375' id='8' mode='slider' name='MapOfEurope' param='[federated.0hr04oj1851aqo10jcrvy18y7udw].[yr:Order Date:ok]' show-all='false' type='filter' w='16000' x='83200' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='8125' id='9' name='MapOfEurope' pane-specification-id='0' param='[federated.0hr04oj1851aqo10jcrvy18y7udw].[usr:Calculation_180988453195726848:qk]' type='color' w='16000' x='83200' y='10375'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='15750' id='10' name='MapOfEurope' pane-specification-id='0' param='[federated.0hr04oj1851aqo10jcrvy18y7udw].[sum:Sales:qk]' type='size' w='16000' x='83200' y='18500'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='750' minheight='750' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='12' type='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='13' param='vert' type='layout-flow' w='98400' x='800' y='1000'>
+                <zone h='9375' id='8' mode='slider' name='MapOfEurope' param='[federated.0hr04oj1851aqo10jcrvy18y7udw].[yr:Order Date:ok]' show-all='false' type='filter' w='16000' x='83200' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='49000' id='3' is-fixed='true' name='MapOfEurope' w='82400' x='800' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8125' id='9' name='MapOfEurope' pane-specification-id='0' param='[federated.0hr04oj1851aqo10jcrvy18y7udw].[usr:Calculation_180988453195726848:qk]' type='color' w='16000' x='83200' y='10375'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='15750' id='10' name='MapOfEurope' pane-specification-id='0' param='[federated.0hr04oj1851aqo10jcrvy18y7udw].[sum:Sales:qk]' type='size' w='16000' x='83200' y='18500'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='49000' id='11' is-fixed='true' name='Customer ScatterPlot' w='82400' x='800' y='50000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{5377C550-BF75-4949-BAC9-4D3C216270DC}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='worksheet' name='MapOfEurope'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card pane-specification-id='0' param='[federated.0hr04oj1851aqo10jcrvy18y7udw].[usr:Calculation_180988453195726848:qk]' type='color' />
+            <card pane-specification-id='0' param='[federated.0hr04oj1851aqo10jcrvy18y7udw].[sum:Sales:qk]' type='size' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.0hr04oj1851aqo10jcrvy18y7udw].[Inclusions (Country,State)]' type='filter' />
+            <card mode='slider' param='[federated.0hr04oj1851aqo10jcrvy18y7udw].[yr:Order Date:ok]' show-all='false' type='filter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0hr04oj1851aqo10jcrvy18y7udw].[none:Country:nk]</field>
+            <field>[federated.0hr04oj1851aqo10jcrvy18y7udw].[yr:Order Date:ok]</field>
+          </color-one-way>
+        </highlight>
+        <default-map-tool-selection tool='1' />
+      </viewpoint>
+      <simple-id uuid='{C03C3725-190C-4A41-A709-CAC5A6750537}' />
+    </window>
+    <window class='worksheet' name='Customer ScatterPlot'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='slider' param='[federated.0hr04oj1851aqo10jcrvy18y7udw].[yr:Order Date:ok]' show-all='false' type='filter' />
+            <card pane-specification-id='0' param='[federated.0hr04oj1851aqo10jcrvy18y7udw].[usr:Calculation_180988453195726848:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0hr04oj1851aqo10jcrvy18y7udw].[none:Customer Name:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{9611BD68-963F-4188-B3CB-FC040897EC0C}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Dashboard 2'>
+      <viewpoints>
+        <viewpoint name='Customer ScatterPlot'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='MapOfEurope'>
+          <zoom type='entire-view' />
+          <default-map-tool-selection tool='1' />
+        </viewpoint>
+      </viewpoints>
+      <active id='3' />
+      <simple-id uuid='{B42A2A31-8B27-4DDE-B4D5-C6E2063B5196}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Customer ScatterPlot' width='192'>
+      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
+      6AAAAABJRU5ErkJggg==
+    </thumbnail>
+    <thumbnail height='192' name='Dashboard 2' width='192'>
+      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
+      rkJggg==
+    </thumbnail>
+    <thumbnail height='192' name='MapOfEurope' width='192'>
+      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
+      5n6sugW2HNYAAAAASUVORK5CYII=
+    </thumbnail>
+  </thumbnails>
+</workbook>
